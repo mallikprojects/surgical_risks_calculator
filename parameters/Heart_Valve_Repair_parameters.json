@@ -1,0 +1,273 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Hypertension",
+    "Description": "Chronic high blood pressure.",
+    "ReportsToAnalyze": [
+      "Blood pressure readings",
+      "Patient's medical history",
+      "Medication adherence records"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Systolic BP > 140 mmHg or Diastolic BP > 90 mmHg",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased cardiac workload",
+          "Potential for heart failure"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Systolic BP <= 140 mmHg and Diastolic BP <= 90 mmHg",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Coronary Artery Disease",
+    "Description": "Presence of atherosclerosis or previous myocardial infarction.",
+    "ReportsToAnalyze": [
+      "Coronary angiography results",
+      "Stress test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Presence of significant stenosis (> 70%) in coronary arteries",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative myocardial infarction"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No significant stenosis",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Chronic Kidney Disease",
+    "Description": "Reduced kidney function as indicated by eGFR.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "eGFR calculations",
+      "Urinalysis results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 60 mL/min",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Increased risk of fluid overload",
+          "Electrolyte imbalances"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "eGFR >= 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculations",
+      "Patient's medical history",
+      "Weight and height records"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35 kg/m\u00b2",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of surgical complications",
+          "Longer recovery time"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "BMI <= 35 kg/m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's date of birth",
+      "Medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 75 years",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Increased risk of postoperative complications",
+          "Higher mortality risk"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Age <= 75 years",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Smoking Status",
+    "Description": "Current or past smoking habits.",
+    "ReportsToAnalyze": [
+      "Patient's smoking history",
+      "Lung function tests",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Former smoker",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of cardiovascular complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Never smoked",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Heart Failure",
+    "Description": "Presence of heart failure symptoms or diagnosis.",
+    "ReportsToAnalyze": [
+      "Echocardiogram results",
+      "BNP levels",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "NYHA Class III or IV",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative morbidity and mortality"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "NYHA Class I or II",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No heart failure",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Anemia",
+    "Description": "Low hemoglobin levels indicating anemia.",
+    "ReportsToAnalyze": [
+      "Complete blood count (CBC)",
+      "Hemoglobin levels",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Hemoglobin < 10 g/dL",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Increased risk of transfusion",
+          "Higher risk of postoperative complications"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Hemoglobin >= 10 g/dL",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Previous Cardiac Surgery",
+    "Description": "History of prior cardiac surgical procedures.",
+    "ReportsToAnalyze": [
+      "Surgical history",
+      "Operative reports",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of multiple cardiac surgeries",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of adhesions",
+          "Higher risk of complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No previous cardiac surgeries",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

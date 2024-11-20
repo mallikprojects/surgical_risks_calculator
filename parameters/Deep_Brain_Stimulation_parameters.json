@@ -1,0 +1,247 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularHealth",
+    "Description": "Assessment of heart health including history of hypertension, arrhythmias, or heart failure.",
+    "ReportsToAnalyze": [
+      "Electrocardiogram (ECG)",
+      "Echocardiogram results",
+      "Blood pressure readings",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of heart failure or arrhythmias",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Blood pressure > 140/90 mmHg",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of stroke",
+          "Increased risk of bleeding"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Blood pressure <= 140/90 mmHg",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Date of birth"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 70",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of cognitive decline",
+          "Higher surgical risk"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Age 60-70",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age < 60",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "BodyMassIndex",
+    "Description": "Calculation of body mass index to assess obesity.",
+    "ReportsToAnalyze": [
+      "Height and weight measurements",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 30",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of surgical complications",
+          "Increased risk of infection"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "BMI 25-30",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "BMI < 25",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "AnticoagulantUse",
+    "Description": "Current use of anticoagulant medications.",
+    "ReportsToAnalyze": [
+      "Medication list",
+      "Patient's medical history",
+      "INR levels if applicable"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Currently on anticoagulants",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding during and after surgery"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Not on anticoagulants",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "NeurologicalAssessment",
+    "Description": "Evaluation of cognitive function and neurological status.",
+    "ReportsToAnalyze": [
+      "Neuropsychological test results",
+      "Neurological examination findings",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Cognitive impairment present",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of postoperative delirium",
+          "Higher risk of complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No cognitive impairment",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "PulmonaryFunction",
+    "Description": "Assessment of lung function and history of respiratory issues.",
+    "ReportsToAnalyze": [
+      "Pulmonary function tests (PFTs)",
+      "Chest X-ray results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "FEV1 < 70% predicted",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "FEV1 70-80% predicted",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "FEV1 >= 80% predicted",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "KidneyFunction",
+    "Description": "Assessment of renal function through laboratory tests.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated Glomerular Filtration Rate (eGFR)",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 60 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of postoperative complications",
+          "Higher risk of medication toxicity"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "eGFR 60-90 mL/min",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "eGFR >= 90 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

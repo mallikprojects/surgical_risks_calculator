@@ -1,0 +1,6 @@
+flask
+pytesseract
+pillow
+openai
+werkzeug
+boto3

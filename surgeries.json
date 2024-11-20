@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "category_name": "Cardiothoracic Surgery",
+      "surgeries": [
+        "Coronary Artery Bypass Grafting",
+        "Heart Valve Repair",
+        "Lung Resection",
+        "Thoracotomy",
+        "Aortic Aneurysm Repair"
+      ]
+    },
+    {
+      "category_name": "Orthopedic Surgery",
+      "surgeries": [
+        "Total Knee Replacement",
+        "Hip Fracture Repair",
+        "Arthroscopy",
+        "Spinal Fusion",
+        "Shoulder Replacement"
+      ]
+    },
+    {
+      "category_name": "Neurosurgery",
+      "surgeries": [
+        "Craniotomy",
+        "Spinal Surgery",
+        "Deep Brain Stimulation",
+        "Tumor Resection",
+        "Cerebrospinal Fluid Shunt"
+      ]
+    },
+    {
+      "category_name": "General Surgery",
+      "surgeries": [
+        "Appendectomy",
+        "Cholecystectomy",
+        "Hernia Repair",
+        "Bowel Resection",
+        "Gastrectomy"
+      ]
+    },
+    {
+      "category_name": "Plastic Surgery",
+      "surgeries": [
+        "Rhinoplasty",
+        "Breast Augmentation",
+        "Facelift",
+        "Liposuction",
+        "Reconstructive Surgery"
+      ]
+    },
+    {
+      "category_name": "Urological Surgery",
+      "surgeries": [
+        "Prostatectomy",
+        "Nephrectomy",
+        "Cystectomy",
+        "Ureteroscopy",
+        "Vasectomy"
+      ]
+    },
+    {
+      "category_name": "Gynecological Surgery",
+      "surgeries": [
+        "Hysterectomy",
+        "Oophorectomy",
+        "Laparoscopy",
+        "Endometrial Ablation",
+        "Myomectomy"
+      ]
+    },
+    {
+      "category_name": "Otolaryngology Surgery",
+      "surgeries": [
+        "Tonsillectomy",
+        "Sinus Surgery",
+        "Myringotomy",
+        "Laryngectomy",
+        "Septoplasty"
+      ]
+    },
+    {
+      "category_name": "Vascular Surgery",
+      "surgeries": [
+        "Endarterectomy",
+        "Angioplasty",
+        "Bypass Grafting",
+        "Aneurysm Repair",
+        "Vein Stripping"
+      ]
+    }
+  ]
+}

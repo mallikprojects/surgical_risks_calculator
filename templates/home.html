@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Surgery</title>
+</head>
+<body>
+    <h1>Select Surgery</h1>
+    <form method="post">
+        <label for="surgery">Choose a surgery:</label>
+        <select name="surgery" id="surgery" required>
+            {% for surgery in surgeries %}
+                <option value="{{ surgery.name }}">{{ surgery.name }} ({{ surgery.category }})</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Proceed</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,220 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "History of coronary artery disease, heart failure, or arrhythmias.",
+    "ReportsToAnalyze": [
+      "ECG results",
+      "Echocardiogram reports",
+      "Cardiac stress test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction within 6 months",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Ejection fraction < 40%",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of heart failure"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No significant cardiovascular history",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "ChronicObstructivePulmonaryDisease",
+    "Description": "Presence of COPD or other significant pulmonary disease.",
+    "ReportsToAnalyze": [
+      "Pulmonary function tests (PFTs)",
+      "Chest X-ray results",
+      "Patient's smoking history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "FEV1 < 50% predicted",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "FEV1 >= 50% predicted",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's weight and height records",
+      "Comorbidities related to obesity"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of surgical complications",
+          "Delayed recovery"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI <= 35",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "RenalFunction",
+    "Description": "Assessment of kidney function, particularly in patients with chronic kidney disease.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated Glomerular Filtration Rate (eGFR)",
+      "Urinalysis results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 30 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "eGFR >= 30 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's demographic information",
+      "Medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 70",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Increased risk of complications and mortality"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "Age <= 70",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "SmokingStatus",
+    "Description": "Current or past smoking history.",
+    "ReportsToAnalyze": [
+      "Patient's smoking history",
+      "Nicotine dependence assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Former smoker (quit > 1 year)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications compared to non-smokers"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Never smoked",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "AnticoagulantUse",
+    "Description": "Use of anticoagulant medications prior to surgery.",
+    "ReportsToAnalyze": [
+      "Medication history",
+      "INR levels if on warfarin",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Currently on anticoagulants",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding during and after surgery"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Not on anticoagulants",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

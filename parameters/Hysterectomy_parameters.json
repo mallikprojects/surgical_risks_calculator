@@ -1,0 +1,231 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Hypertension",
+    "Description": "Presence of high blood pressure, either controlled or uncontrolled.",
+    "ReportsToAnalyze": [
+      "Blood pressure readings",
+      "Patient's medical history",
+      "Medication adherence records"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Systolic BP > 140 mmHg or Diastolic BP > 90 mmHg",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased cardiovascular risk",
+          "Potential for intraoperative complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Systolic BP <= 140 mmHg and Diastolic BP <= 90 mmHg",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's weight and height records",
+      "Comorbidities related to obesity"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35 kg/m\u00b2",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of surgical complications",
+          "Delayed recovery"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "BMI <= 35 kg/m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Cardiovascular Disease",
+    "Description": "History of heart disease, including coronary artery disease, heart failure, or arrhythmias.",
+    "ReportsToAnalyze": [
+      "ECG results",
+      "Echocardiogram reports",
+      "Cardiology consultation notes"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction or heart failure",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No history of cardiovascular disease",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Chronic Respiratory Disease",
+    "Description": "Presence of chronic obstructive pulmonary disease (COPD) or asthma.",
+    "ReportsToAnalyze": [
+      "Pulmonary function tests",
+      "Patient's medical history",
+      "Medication usage records"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "FEV1 < 70% of predicted",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of respiratory complications"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "FEV1 >= 70% of predicted",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Renal Function",
+    "Description": "Assessment of kidney function, particularly in patients with chronic kidney disease.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated Glomerular Filtration Rate (eGFR)",
+      "Urinalysis results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 60 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of fluid overload",
+          "Delayed drug clearance"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "eGFR >= 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age, particularly those over 65 years.",
+    "ReportsToAnalyze": [
+      "Patient's age",
+      "Comorbidities related to age"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 65",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications and longer recovery"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age <= 65",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Smoking Status",
+    "Description": "Current or past smoking history.",
+    "ReportsToAnalyze": [
+      "Patient's smoking history",
+      "Nicotine dependence assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Non-smoker or former smoker (quit > 1 year)",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Medication History",
+    "Description": "Review of current medications, especially anticoagulants and immunosuppressants.",
+    "ReportsToAnalyze": [
+      "List of current medications",
+      "Medication adherence records",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Use of anticoagulants or immunosuppressants",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding",
+          "Increased risk of infection"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No use of high-risk medications",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

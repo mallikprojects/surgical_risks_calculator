@@ -1,0 +1,234 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Hypertension",
+    "Description": "Presence of high blood pressure, defined as systolic BP \u2265 140 mmHg or diastolic BP \u2265 90 mmHg.",
+    "ReportsToAnalyze": [
+      "Blood pressure readings",
+      "Patient's medical history",
+      "Medication records"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Systolic BP \u2265 140 mmHg or Diastolic BP \u2265 90 mmHg",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of cardiovascular complications",
+          "Potential for anesthesia complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Systolic BP < 140 mmHg and Diastolic BP < 90 mmHg",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) \u2265 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's medical history",
+      "Comorbidities assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI \u2265 30",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of surgical complications",
+          "Delayed recovery"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "BMI < 30",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Cardiovascular Disease",
+    "Description": "History of heart disease, including coronary artery disease, heart failure, or arrhythmias.",
+    "ReportsToAnalyze": [
+      "ECG results",
+      "Echocardiogram reports",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of cardiovascular disease",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events",
+          "Potential for prolonged recovery"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "No history of cardiovascular disease",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Smoking Status",
+    "Description": "Current or past smoking habits.",
+    "ReportsToAnalyze": [
+      "Smoking history questionnaire",
+      "Patient's medical history",
+      "Pulmonary function tests"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "Former smoker",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications if quit < 6 weeks"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Never smoked",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Age-related health assessments"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 65",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of complications",
+          "Increased recovery time"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Age 45-65",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of comorbidities"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age < 45",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Chronic Kidney Disease",
+    "Description": "Presence of chronic kidney disease (CKD) stages 1-5.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated Glomerular Filtration Rate (eGFR)",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 60 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of anesthesia complications",
+          "Higher risk of postoperative complications"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "eGFR \u2265 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Medication Use",
+    "Description": "Use of anticoagulants, steroids, or immunosuppressants.",
+    "ReportsToAnalyze": [
+      "Medication list",
+      "Patient's medical history",
+      "Lab results related to coagulation"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Use of anticoagulants",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding",
+          "Potential for hematoma formation"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Use of steroids or immunosuppressants",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "No significant medication use",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Reports</title>
+</head>
+<body>
+    <h1>Upload Reports for {{ surgery }}</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="post" enctype="multipart/form-data">
+        {% for report in required_reports %}
+            <label for="{{ report }}">{{ report }}:</label>
+            <input type="file" name="{{ report }}" id="{{ report }}" accept=".png,.jpg,.jpeg" required><br><br>
+        {% endfor %}
+        <button type="submit">Upload and Analyze</button>
+    </form>
+</body>
+</html>

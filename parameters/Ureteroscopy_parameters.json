@@ -1,0 +1,229 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "Presence of conditions such as hypertension, coronary artery disease, or heart failure.",
+    "ReportsToAnalyze": [
+      "Electrocardiogram (ECG)",
+      "Echocardiogram results",
+      "Blood pressure readings",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction or heart failure",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Blood pressure > 140/90 mmHg",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Blood pressure <= 140/90 mmHg",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "ChronicKidneyDisease",
+    "Description": "Presence of chronic kidney disease (CKD) stages 1-5.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated Glomerular Filtration Rate (eGFR)",
+      "Urinalysis results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 30 mL/min",
+        "RiskIncrease": "Very High",
+        "RiskFactors": [
+          "Increased risk of anesthesia complications",
+          "Higher risk of postoperative renal failure"
+        ],
+        "RiskMultiplier": 1.8
+      },
+      {
+        "Condition": "eGFR 30-59 mL/min",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "eGFR >= 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's medical history",
+      "Comorbidities related to obesity"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35 kg/m\u00b2",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of surgical complications",
+          "Delayed recovery"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI 30-35 kg/m\u00b2",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "BMI < 30 kg/m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Age-related comorbidities"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 70 years",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of complications",
+          "Higher mortality risk"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Age 60-70 years",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age < 60 years",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "SmokingStatus",
+    "Description": "Current or past smoking habits.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Nicotine levels in blood or urine"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Former smoker (quit within last 5 years)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Non-smoker",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "AnticoagulantUse",
+    "Description": "Use of anticoagulant medications.",
+    "ReportsToAnalyze": [
+      "Medication history",
+      "INR levels if applicable",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Currently on anticoagulants",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "History of anticoagulant use but not currently on them",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No history of anticoagulant use",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

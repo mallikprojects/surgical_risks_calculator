@@ -1,0 +1,197 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "Presence of any cardiovascular conditions such as hypertension, coronary artery disease, or heart failure.",
+    "ReportsToAnalyze": [
+      "ECG results",
+      "Echocardiogram reports",
+      "Blood pressure readings",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Uncontrolled hypertension (BP > 160/100 mmHg)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of bleeding",
+          "Anesthesia complications"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "Controlled hypertension (BP <= 160/100 mmHg)",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's medical history",
+      "Comorbidities assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of anesthesia complications",
+          "Increased risk of infection"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI 30-35",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of postoperative complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "BMI < 30",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "ChronicRespiratoryDisease",
+    "Description": "Presence of chronic respiratory conditions such as asthma or COPD.",
+    "ReportsToAnalyze": [
+      "Pulmonary function tests",
+      "Patient's medical history",
+      "Oxygen saturation levels"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Severe COPD (FEV1 < 50% predicted)",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Moderate COPD (FEV1 50-80% predicted)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of postoperative respiratory issues"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "Mild asthma or controlled respiratory disease",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "RenalInsufficiency",
+    "Description": "Presence of chronic kidney disease (CKD) or acute renal failure.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Glomerular filtration rate (GFR)",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "GFR < 30 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of drug toxicity",
+          "Fluid overload"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "GFR 30-60 mL/min",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "GFR > 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age, particularly if over 65 years.",
+    "ReportsToAnalyze": [
+      "Patient's age",
+      "Comorbidities assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 75",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of complications",
+          "Longer recovery time"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Age 65-75",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of postoperative complications"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "Age < 65",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

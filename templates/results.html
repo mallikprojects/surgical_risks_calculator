@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Risk Analysis Results</title>
+</head>
+<body>
+    <h1>Risk Analysis Results</h1>
+    <p><strong>Total Risk Score:</strong> {{ risk_score }}</p>
+    <p><strong>Risk Level:</strong> {{ risk_level }}</p>
+    <p><strong>Risk Level Range:</strong> {{ risk_level_explaination }}</p>
+    <h2>Details:</h2>
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Condition</th>
+            <th>Risk Increase</th>
+            <th>Risk Factors</th>
+            <th>Risk Multiplier</th>
+        </tr>
+        {% for detail in analysis_details %}
+        <tr>
+            <td>{{ detail['Parameter'] }}</td>
+            <td>{{ detail['Condition'] }}</td>
+            <td>{{ detail['Risk Increase'] }}</td>
+            <td>{{ detail['Risk Factors'] }}</td>
+            <td>{{ detail['Risk Multiplier'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

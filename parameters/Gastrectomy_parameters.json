@@ -1,0 +1,266 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "History of heart disease, including hypertension, coronary artery disease, or heart failure.",
+    "ReportsToAnalyze": [
+      "Electrocardiogram (ECG)",
+      "Echocardiogram results",
+      "Cardiac stress test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Hypertension > 140/90 mmHg",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of bleeding",
+          "Delayed recovery"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No significant cardiovascular history",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's medical history",
+      "Nutritional assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35 kg/m\u00b2",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of surgical complications",
+          "Delayed recovery"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI between 30-35 kg/m\u00b2",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of infection",
+          "Anesthesia complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "BMI < 30 kg/m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "ChronicRespiratoryDisease",
+    "Description": "Presence of chronic obstructive pulmonary disease (COPD) or asthma.",
+    "ReportsToAnalyze": [
+      "Pulmonary function tests",
+      "Chest X-ray results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "FEV1 < 50% predicted",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Prolonged ventilation"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "FEV1 between 50-70% predicted",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of postoperative pneumonia"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "FEV1 > 70% predicted",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "RenalFunction",
+    "Description": "Assessment of kidney function, including presence of chronic kidney disease (CKD).",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated Glomerular Filtration Rate (eGFR)",
+      "Urinalysis results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 30 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of fluid overload",
+          "Electrolyte imbalances"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "eGFR between 30-60 mL/min",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of postoperative complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "eGFR > 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Age-related health assessments"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 70 years",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of complications",
+          "Longer recovery time"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Age between 60-70 years",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of comorbidities affecting surgery"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age < 60 years",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "SmokingStatus",
+    "Description": "Current or past smoking history.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Smoking cessation program participation"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Former smoker (quit within last 5 years)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Non-smoker",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "NutritionalStatus",
+    "Description": "Assessment of nutritional status, including malnutrition or obesity.",
+    "ReportsToAnalyze": [
+      "Nutritional assessment",
+      "Serum albumin levels",
+      "Body weight history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Serum albumin < 3.0 g/dL",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Serum albumin between 3.0-3.5 g/dL",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Serum albumin > 3.5 g/dL",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

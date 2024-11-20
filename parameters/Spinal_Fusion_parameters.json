@@ -1,0 +1,208 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "Presence of conditions such as coronary artery disease, heart failure, or arrhythmias.",
+    "ReportsToAnalyze": [
+      "Electrocardiogram (ECG)",
+      "Echocardiogram results",
+      "Cardiac stress test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction or heart failure",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No history of cardiovascular disease",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's weight and height records",
+      "Comorbidities assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35 kg/m\u00b2",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of surgical complications",
+          "Increased recovery time"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI <= 35 kg/m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Chronic Kidney Disease",
+    "Description": "Presence of chronic kidney disease (CKD) stages 1-5.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated Glomerular Filtration Rate (eGFR)",
+      "Urinalysis results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 60 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of postoperative complications",
+          "Potential for delayed recovery"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "eGFR >= 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Smoking Status",
+    "Description": "Current or past smoking habits.",
+    "ReportsToAnalyze": [
+      "Patient's smoking history",
+      "Nicotine dependence assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "Non-smoker or former smoker (quit > 6 months)",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's date of birth",
+      "Medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 65 years",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications",
+          "Longer recovery time"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age <= 65 years",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Medication Use",
+    "Description": "Use of anticoagulants, steroids, or immunosuppressants.",
+    "ReportsToAnalyze": [
+      "Medication list",
+      "Patient's medical history",
+      "Recent lab results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Use of anticoagulants or immunosuppressants",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding",
+          "Higher risk of infection"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "No use of high-risk medications",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Functional Status",
+    "Description": "Assessment of the patient's functional capacity and mobility.",
+    "ReportsToAnalyze": [
+      "Functional assessment scores",
+      "Patient's activity level",
+      "Physical therapy evaluations"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Functional capacity < 4 METs",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of postoperative complications",
+          "Longer recovery time"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Functional capacity >= 4 METs",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

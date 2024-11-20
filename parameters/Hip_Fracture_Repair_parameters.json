@@ -1,0 +1,259 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age in years.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Demographic data"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 80",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of complications",
+          "Higher mortality rate"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Age <= 80",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "Presence of heart disease, including hypertension, heart failure, or previous myocardial infarction.",
+    "ReportsToAnalyze": [
+      "ECG results",
+      "Echocardiogram reports",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction within the last year",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Hypertension uncontrolled (BP > 160/100)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of stroke",
+          "Increased risk of bleeding"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No significant cardiovascular history",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "ChronicKidneyDisease",
+    "Description": "Presence of chronic kidney disease (CKD) stages 1-5.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "Estimated glomerular filtration rate (eGFR)",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 30 mL/min",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of postoperative complications",
+          "Higher risk of infection"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "eGFR between 30-60 mL/min",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of fluid overload",
+          "Potential for electrolyte imbalances"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "eGFR > 60 mL/min",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's medical history",
+      "Weight and height measurements"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of surgical complications",
+          "Higher risk of infection"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI between 30-35",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of anesthesia complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "BMI < 30",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "SmokingStatus",
+    "Description": "Current or past smoking history.",
+    "ReportsToAnalyze": [
+      "Patient's medical history",
+      "Smoking cessation records"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Former smoker (quit within the last 5 years)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of respiratory complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Non-smoker",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Anemia",
+    "Description": "Presence of anemia defined by hemoglobin levels.",
+    "ReportsToAnalyze": [
+      "Complete blood count (CBC)",
+      "Hemoglobin levels",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Hemoglobin < 10 g/dL",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of transfusion",
+          "Higher risk of postoperative complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Hemoglobin between 10-12 g/dL",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of fatigue",
+          "Potential for delayed recovery"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Hemoglobin > 12 g/dL",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "FunctionalStatus",
+    "Description": "Assessment of the patient's functional mobility and independence.",
+    "ReportsToAnalyze": [
+      "Functional independence measure (FIM)",
+      "Patient's medical history",
+      "Physical therapy evaluations"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Dependent in activities of daily living (ADLs)",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of postoperative complications",
+          "Higher likelihood of rehabilitation needs"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Partially independent in ADLs",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of falls",
+          "Potential for longer recovery"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Fully independent in ADLs",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

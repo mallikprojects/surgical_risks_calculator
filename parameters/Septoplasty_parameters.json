@@ -1,0 +1,231 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "Presence of any cardiovascular conditions such as hypertension, coronary artery disease, or heart failure.",
+    "ReportsToAnalyze": [
+      "Electrocardiogram (ECG)",
+      "Echocardiogram results",
+      "Blood pressure readings",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction or heart failure",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Uncontrolled hypertension (BP > 160/100 mmHg)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of bleeding",
+          "Anesthesia complications"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "Controlled hypertension (BP <= 160/100 mmHg)",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's weight and height records",
+      "Comorbidities assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of anesthesia complications",
+          "Increased risk of infection"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI 30-35",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of respiratory issues"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "BMI < 30",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "ChronicRespiratoryDisease",
+    "Description": "Presence of chronic respiratory conditions such as asthma or COPD.",
+    "ReportsToAnalyze": [
+      "Pulmonary function tests",
+      "Patient's medical history",
+      "Oxygen saturation levels"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Severe COPD (FEV1 < 50% predicted)",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory failure",
+          "Anesthesia complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Mild to moderate asthma/COPD",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of bronchospasm"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No chronic respiratory disease",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's age",
+      "Medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 65",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Increased risk of postoperative complications",
+          "Longer recovery time"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Age 45-65",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of comorbidities"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age < 45",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "SmokingStatus",
+    "Description": "Current or past smoking habits.",
+    "ReportsToAnalyze": [
+      "Patient's smoking history",
+      "Nicotine levels (if applicable)"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Former smoker (quit within last 5 years)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of respiratory issues"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Non-smoker",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "AnticoagulantUse",
+    "Description": "Use of anticoagulant medications.",
+    "ReportsToAnalyze": [
+      "Medication history",
+      "INR levels (if applicable)",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Currently on anticoagulants",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding",
+          "Need for careful perioperative management"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "History of anticoagulant use but currently off",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Potential for rebound thrombosis"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No anticoagulant use",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

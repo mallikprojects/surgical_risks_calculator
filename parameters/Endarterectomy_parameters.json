@@ -1,0 +1,235 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Hypertension",
+    "Description": "Presence of high blood pressure, defined as systolic BP \u2265 140 mmHg or diastolic BP \u2265 90 mmHg.",
+    "ReportsToAnalyze": [
+      "Blood pressure readings",
+      "Patient's medical history",
+      "Medication adherence records"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Systolic BP \u2265 160 mmHg or Diastolic BP \u2265 100 mmHg",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of cardiovascular events",
+          "Potential for perioperative complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Systolic BP < 160 mmHg and Diastolic BP < 100 mmHg",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Coronary Artery Disease",
+    "Description": "History of coronary artery disease or myocardial infarction.",
+    "ReportsToAnalyze": [
+      "Cardiac stress test results",
+      "Coronary angiography reports",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction within the last 6 months",
+        "RiskIncrease": "Very High",
+        "RiskFactors": [
+          "Increased risk of perioperative myocardial infarction",
+          "Higher mortality risk"
+        ],
+        "RiskMultiplier": 2.0
+      },
+      {
+        "Condition": "No history of myocardial infarction or stable CAD",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Chronic Kidney Disease",
+    "Description": "Presence of chronic kidney disease, defined as an estimated glomerular filtration rate (eGFR) < 60 mL/min/1.73m\u00b2.",
+    "ReportsToAnalyze": [
+      "Serum creatinine levels",
+      "eGFR calculations",
+      "Urinalysis results"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "eGFR < 30 mL/min/1.73m\u00b2",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of postoperative renal failure",
+          "Higher risk of complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "eGFR \u2265 30 mL/min/1.73m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's demographic information",
+      "Medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 75 years",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Increased risk of complications",
+          "Higher mortality risk"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Age \u2264 75 years",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Smoking Status",
+    "Description": "Current or past smoking history.",
+    "ReportsToAnalyze": [
+      "Patient's smoking history",
+      "Pulmonary function tests",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Non-smoker or former smoker (quit > 1 year)",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) \u2265 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculations",
+      "Patient's medical history",
+      "Nutritional assessments"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI \u2265 35 kg/m\u00b2",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of surgical complications",
+          "Higher risk of infection"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "BMI < 35 kg/m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Peripheral Vascular Disease",
+    "Description": "Presence of peripheral vascular disease as evidenced by claudication or imaging studies.",
+    "ReportsToAnalyze": [
+      "Doppler ultrasound results",
+      "Ankle-brachial index (ABI) measurements",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "ABI < 0.9 or history of claudication",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Increased risk of limb ischemia",
+          "Higher risk of complications"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "ABI \u2265 0.9 and no history of claudication",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Anemia",
+    "Description": "Presence of anemia, defined as hemoglobin < 13 g/dL in men and < 12 g/dL in women.",
+    "ReportsToAnalyze": [
+      "Complete blood count (CBC)",
+      "Patient's medical history",
+      "Iron studies"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Hemoglobin < 10 g/dL",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of transfusion",
+          "Higher risk of postoperative complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Hemoglobin \u2265 10 g/dL",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]

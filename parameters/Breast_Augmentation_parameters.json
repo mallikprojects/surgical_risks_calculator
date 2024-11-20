@@ -1,0 +1,228 @@
+[
+  {
+    "Name": "DiabetesMellitus",
+    "Description": "Presence of Type 1 or Type 2 diabetes.",
+    "ReportsToAnalyze": [
+      "Fasting blood glucose levels",
+      "HbA1c test results",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "HbA1c > 7%",
+        "RiskIncrease": "Significant",
+        "RiskFactors": [
+          "Higher risk of infection",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.3
+      },
+      {
+        "Condition": "HbA1c <= 7%",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "CardiovascularDisease",
+    "Description": "Presence of any cardiovascular conditions such as hypertension, coronary artery disease, or heart failure.",
+    "ReportsToAnalyze": [
+      "Electrocardiogram (ECG)",
+      "Echocardiogram results",
+      "Blood pressure readings",
+      "Patient's medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of myocardial infarction or heart failure",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative cardiac events"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Blood pressure > 140/90 mmHg",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of bleeding and complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Blood pressure <= 140/90 mmHg",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Obesity",
+    "Description": "Body Mass Index (BMI) greater than 30 kg/m\u00b2.",
+    "ReportsToAnalyze": [
+      "BMI calculation",
+      "Patient's weight and height records",
+      "Comorbidities assessment"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "BMI > 35 kg/m\u00b2",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Higher risk of surgical complications",
+          "Increased risk of infection"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "BMI between 30 and 35 kg/m\u00b2",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of anesthesia complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "BMI < 30 kg/m\u00b2",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "SmokingStatus",
+    "Description": "Current or past smoking habits.",
+    "ReportsToAnalyze": [
+      "Patient's smoking history",
+      "Nicotine levels in blood (if applicable)"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Current smoker",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of respiratory complications",
+          "Delayed wound healing"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Former smoker (quit within last 12 months)",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Non-smoker",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Age",
+    "Description": "Patient's age at the time of surgery.",
+    "ReportsToAnalyze": [
+      "Patient's date of birth",
+      "Medical history"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Age > 60 years",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of anesthesia complications",
+          "Higher likelihood of comorbidities"
+        ],
+        "RiskMultiplier": 1.4
+      },
+      {
+        "Condition": "Age between 40 and 60 years",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Increased risk of complications"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "Age < 40 years",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "MedicationUse",
+    "Description": "Current medications that may affect surgery outcomes.",
+    "ReportsToAnalyze": [
+      "List of current medications",
+      "Patient's medical history",
+      "Medication interaction reports"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "Use of anticoagulants or antiplatelet agents",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of bleeding"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "Use of corticosteroids",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Delayed wound healing",
+          "Increased infection risk"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No significant medications",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  },
+  {
+    "Name": "Allergies",
+    "Description": "History of allergies, particularly to anesthesia or medications.",
+    "ReportsToAnalyze": [
+      "Patient's allergy history",
+      "Anaphylaxis reports"
+    ],
+    "RiskAnalysisRules": [
+      {
+        "Condition": "History of severe allergic reactions (anaphylaxis)",
+        "RiskIncrease": "High",
+        "RiskFactors": [
+          "Increased risk of perioperative complications"
+        ],
+        "RiskMultiplier": 1.5
+      },
+      {
+        "Condition": "History of mild allergies",
+        "RiskIncrease": "Moderate",
+        "RiskFactors": [
+          "Potential for allergic reactions during surgery"
+        ],
+        "RiskMultiplier": 1.2
+      },
+      {
+        "Condition": "No known allergies",
+        "RiskIncrease": "Baseline",
+        "RiskFactors": [],
+        "RiskMultiplier": 1.0
+      }
+    ]
+  }
+]
